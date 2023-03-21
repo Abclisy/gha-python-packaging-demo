@@ -1,7 +1,9 @@
 import sys
 from argparse import ArgumentParser
-from importlib.metadata import version
-
+try:
+    from importlib.metadata import version
+except ImportError: # for Python<3.8
+    from importlib_metadata import version
 
 def entry_point():
     parser = ArgumentParser()
